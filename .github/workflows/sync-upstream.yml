@@ -1,0 +1,49 @@
+name: Sync upstream
+
+on:
+  schedule:
+    # Daily at 03:17 UTC. Offset from the hour so it is not queued with everything else.
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-upstream
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # Used by --check to parse every SKILL.md frontmatter with a real YAML parser.
+      - name: Install pyyaml
+        run: pip install pyyaml
+
+      # Aborts without writing anything if upstream looks unexpected -- a missing
+      # SKILL.md, a frontmatter name that disagrees with its folder, or a new
+      # single-word skill name whose references cannot be rewritten safely.
+      - name: Regenerate from upstream
+        run: python tools/sync_upstream.py --commit-message-file "$RUNNER_TEMP/commit-message.txt"
+
+      - name: Validate the generated tree
+        run: python tools/sync_upstream.py --check --require-yaml
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Already in sync with upstream; nothing to commit."
+            exit 0
+          fi
+          git commit -F "$RUNNER_TEMP/commit-message.txt"
+          git push
