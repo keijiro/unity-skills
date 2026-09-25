@@ -26,6 +26,7 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 | `levelplay-unity-integration` | Integrates the LevelPlay Mediation SDK via the Ads Mediation UPM package. |
 | `new-unity-project` | Use when starting a brand-new Unity game or project from scratch — "make/start/create a new game", "bootstrap a Unity project", "I want to build a [genre] game", "scaffo… |
 | `unity-2d-pixel-perfect` | Sets up, diagnoses, and fixes pixel perfect 2D rendering in Unity projects. |
+| `unity-asset-transformer-toolkit` | Imports 3D models and point clouds with Asset Transformer Toolkit (formerly Pixyz), and creates, edits, and runs RuleSets, Actions, and LODs. |
 | `unity-audio-setup-mixers` | Scans the scene and audio assets to appropriately route Audio Sources into existing Audio Mixer Groups, classifying each source by what it plays. |
 | `unity-build-live-game` | Build and operate a live game using Unity Services. |
 | `unity-cli` | Use when interacting with Unity CLI from the terminal, or to control a running/connected Unity Editor from the command line — create or modify GameObjects, edit scenes a… |

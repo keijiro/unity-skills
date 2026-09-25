@@ -6,7 +6,7 @@ upstream and the next sync will pick it up.
 
 - Upstream: `Unity-Technologies/skills`
 - Ref: `main`
-- Commit: `a851b6725718c8b9b789ad5cd1546287177c051c`
+- Commit: `62db54ffcb17499595028b3d384f0d06a13f894a`
 
 The only transformation is the skill name: a skill whose name does not already
 contain `unity` gets a `unity-` prefix, in its folder name, in its `name:`
@@ -20,6 +20,7 @@ every run even when upstream has not moved. Use `git log` for that.
 | Upstream | This repository |
 |---|---|
 | `2d-pixel-perfect` | `unity-2d-pixel-perfect` |
+| `asset-transformer-toolkit` | `unity-asset-transformer-toolkit` |
 | `audio-setup-mixers` | `unity-audio-setup-mixers` |
 | `build-live-game` | `unity-build-live-game` |
 | `generate-editor-search-query` | `unity-generate-editor-search-query` |
