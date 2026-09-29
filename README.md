@@ -23,38 +23,39 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 <!-- BEGIN SKILLS -->
 | Skill | Description |
 |---|---|
-| `levelplay-unity-integration` | Integrates the LevelPlay Mediation SDK via the Ads Mediation UPM package. |
-| `new-unity-project` | Use when starting a brand-new Unity game or project from scratch — "make/start/create a new game", "bootstrap a Unity project", "I want to build a [genre] game", "scaffo… |
-| `unity-2d-pixel-perfect` | Sets up, diagnoses, and fixes pixel perfect 2D rendering in Unity projects. |
+| `levelplay-unity-integration` | Integrates the LevelPlay ad mediation SDK via the Ads Mediation package. |
+| `new-unity-project` | Guides creating a new Unity project, gathering concept, platforms, and monetization before setting up the project, source control, and packages. |
+| `unity-2d-pixel-perfect` | Sets up, diagnoses, and fixes pixel perfect 2D rendering with PixelPerfectCamera in URP or Built-in. |
 | `unity-asset-transformer-toolkit` | Imports 3D models and point clouds with Asset Transformer Toolkit (formerly Pixyz), and creates, edits, and runs RuleSets, Actions, and LODs. |
-| `unity-audio-setup-mixers` | Scans the scene and audio assets to appropriately route Audio Sources into existing Audio Mixer Groups, classifying each source by what it plays. |
-| `unity-build-live-game` | Build and operate a live game using Unity Services. |
-| `unity-cli` | Use when interacting with Unity CLI from the terminal, or to control a running/connected Unity Editor from the command line — create or modify GameObjects, edit scenes a… |
-| `unity-generate-editor-search-query` | Generates Unity Search / Quick Search queries and opens the Unity Search window for read-only Unity Editor asset or scene-object lookup requests. |
-| `unity-implement-in-app-purchases` | Implement, configure, and debug Unity In-App Purchases (IAP) — store connection, product catalog, consumable/non-consumable/subscription purchases, two-step pending-conf… |
-| `unity-initialize-ai-navigation` | Sets up and configures the Unity AI Navigation system — NavMesh surfaces, NavMesh agents, obstacles, links, modifiers, areas and costs. |
-| `unity-localization` | Sets up and configures Unity Localization, including locales, String/Asset Tables, CJK font support, and Addressables workflows. |
-| `unity-manage-sprite-atlas` | Manage SpriteAtlas using prebuild pipeline with IPreprocessBuildWithReport (DEFAULT approach). |
-| `unity-migrate-birp-to-urp` | Plans, executes, and troubleshoots Unity projects moving from the Built-in Render Pipeline (BiRP/BIRP/Built-in RP) to the Universal Render Pipeline (URP). |
-| `unity-optimize-audio` | Optimizes Unity 6 audio memory, CPU cost, and playback quality through correct import settings and mixer configuration. |
-| `unity-optimize-text-mesh-pro` | Covers TextMeshPro font stacks, dynamic fallback atlases, padding and sampling ratios, SDF16, AutoSize discipline, worldspace vs UGUI, and Memory Profiler font-data capt… |
-| `unity-optimize-web` | Optimizes Unity 6 WebGL and WebGPU builds for smaller download size, faster initial load, and efficient browser runtime performance. |
-| `unity-package-management` | Use when adding, removing, upgrading, or discovering Unity (UPM) packages programmatically from outside the Editor — headless or CI package installs via the C# UnityEdit… |
-| `unity-physics-3d-collision` | 3D PhysX collision and trigger diagnostics for MonoBehaviour-based Unity projects. |
-| `unity-setup-multiplayer-services` | Guides the development of online multiplayer experiences where players connect, group, and interact in real-time using Unity Multiplayer Services. |
-| `unity-setup-vivox-voice-chat` | Add and configure in-game voice chat and text chat for Unity multiplayer games using Unity Vivox. |
+| `unity-audio-setup-mixers` | Routes Audio Sources into existing Audio Mixer Groups, classifying each source by what it plays. |
+| `unity-build-live-game` | Builds and operates live games with Unity Services. |
+| `unity-cli` | Controls the Unity Editor and projects from the command line, driving a running Editor to edit scenes and assets or run C#. |
+| `unity-generate-editor-search-query` | Generates Unity Search queries and opens the Search window to find assets or scene objects. |
+| `unity-implement-in-app-purchases` | Implements, configures, and debugs Unity In-App Purchases, including subscriptions, receipt validation, and direct-to-customer payments via Stripe or Coda. |
+| `unity-initialize-ai-navigation` | Sets up and configures Unity AI Navigation, including NavMesh surfaces, agents, obstacles, and links. |
+| `unity-localization` | Sets up and configures Unity Localization, including locales, String and Asset Tables, and CJK fonts. |
+| `unity-manage-sprite-atlas` | Manages SpriteAtlas assets through a prebuild pipeline, covering master and variant atlases, packing settings, and platform overrides. |
+| `unity-migrate-birp-to-urp` | Plans, executes, and troubleshoots migration from the Built-in Render Pipeline to URP. |
+| `unity-optimize-audio` | Optimizes audio memory, CPU cost, and playback quality through import settings and mixer configuration. |
+| `unity-optimize-text-mesh-pro` | Optimizes TextMeshPro rendering, memory, and font setup, including font asset stacks, fallback atlases, SDF quality, and worldspace text. |
+| `unity-optimize-web` | Optimizes Unity WebGL and WebGPU builds for smaller downloads and faster load. |
+| `unity-package-management` | Adds, removes, upgrades, and discovers Unity (UPM) packages from outside the Editor. |
+| `unity-physics-3d-collision` | Diagnoses 3D PhysX collision and trigger problems. |
+| `unity-project-auditor-fixes` | Instructions for how to use Project Auditor to find and fix a list of issues. |
+| `unity-setup-multiplayer-services` | Guides real-time online multiplayer with Unity Multiplayer Services. |
+| `unity-setup-vivox-voice-chat` | Adds and configures in-game voice and text chat with Unity Vivox. |
 | `unity-shader-graph-create-custom-node` | Generates custom Shader Graph nodes from HLSL code. |
-| `unity-sprite-editor` | Edits Unity sprite properties by generating C# editor scripts using ISpriteEditorDataProvider APIs. |
-| `unity-sprite-segment-3x3grid` | Analyze Sprite textures and output a 3x3 grid representation based on color matching. |
-| `unity-tilemap-palette-create` | Creates a Tile Palette asset. Use when the user wants to organize tiles for 2D level design or create a new Tile Palette from scratch. |
-| `unity-tilemap-ruletile-createempty` | Creates an empty RuleTile asset without Sprite or Spritesheet inputs. |
-| `unity-tilemap-ruletile-createfromsegment` | Use when the user wants tiles that auto-tile (autotile) as they paint, wants a RuleTile built from existing terrain or edge sprites, or asks to make sprites "tile correc… |
-| `unity-ui` | Unity UI expert for menus, HUDs, screens, panels, buttons, labels, and all visual interface elements. |
-| `unity-ui-imgui` | Unity IMGUI (Immediate Mode GUI) expert for legacy editor tools using OnGUI/immediate mode. |
-| `unity-ui-ugui` | Unity uGUI (Canvas-based) UI expert. Understands, edits, and generates Canvas hierarchies, RectTransforms, Layout Groups, and prefab UI. |
-| `unity-ui-uitk` | Unity UI Toolkit expert for Unity 6.0+. Understands, edits, and generates UXML and USS files with flex-based layouts. |
-| `unity-urp-postprocessing` | Sets up, configures, and debugs URP post-processing effects using the Volume framework. |
-| `unity-validate-urp-render-graph-renderer-feature` | Use when the user wants to review or validate a Unity 6+ URP ScriptableRendererFeature that uses the Render Graph API. |
+| `unity-sprite-editor` | Edits Unity sprite rectangles, borders, pivots, outlines, and slicing by generating C# scripts. |
+| `unity-sprite-segment-3x3grid` | Segments a Sprite texture into a 3x3 grid and outputs a pattern of cells matching the center cell's color. |
+| `unity-tilemap-palette-create` | Creates a Tile Palette asset with a rectangular, hexagonal, or isometric Grid layout. |
+| `unity-tilemap-ruletile-createempty` | Creates an empty RuleTile, HexagonalRuleTile, or IsometricRuleTile asset. |
+| `unity-tilemap-ruletile-createfromsegment` | Creates RuleTiles from existing terrain or edge sprites so tiles auto-tile while painting, and converts sprite-segment-3x3grid output patterns into TilingRules. |
+| `unity-ui` | Routes Unity UI requests to the right framework skill (UI Toolkit, uGUI, or IMGUI) and answers UI comparison questions. |
+| `unity-ui-imgui` | Generates and modifies Unity IMGUI editor code such as EditorWindows, custom Inspectors, PropertyDrawers, and OnGUI scripts. |
+| `unity-ui-ugui` | Understands, edits, and generates Unity uGUI Canvas hierarchies, RectTransforms, Layout Groups, and prefab UI. |
+| `unity-ui-uitk` | Understands, edits, and generates Unity UI Toolkit UXML and USS with flex layouts. |
+| `unity-urp-postprocessing` | Sets up, configures, and debugs URP post-processing with the Volume framework. |
+| `unity-validate-urp-render-graph-renderer-feature` | Reviews a Unity 6 URP ScriptableRendererFeature that uses the Render Graph API, checking resource wiring, material binding, execution structure, and best practices. |
 <!-- END SKILLS -->
 
 ## How this repository works
