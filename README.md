@@ -28,6 +28,7 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 | `unity-2d-pixel-perfect` | Sets up, diagnoses, and fixes pixel perfect 2D rendering with PixelPerfectCamera in URP or Built-in. |
 | `unity-asset-transformer-toolkit` | Imports 3D models and point clouds with Asset Transformer Toolkit (formerly Pixyz), and creates, edits, and runs RuleSets, Actions, and LODs. |
 | `unity-audio-setup-mixers` | Routes Audio Sources into existing Audio Mixer Groups, classifying each source by what it plays. |
+| `unity-build-gtk` | Builds node-based Editor tools with Unity Graph Toolkit (GTK) on Unity 6.6+: graphs, nodes, ports and validation, State Machine API tools on 6.7+, and runtime assets via… |
 | `unity-build-live-game` | Builds and operates live games with Unity Services. |
 | `unity-cli` | Controls the Unity Editor and projects from the command line, driving a running Editor to edit scenes and assets or run C#. |
 | `unity-generate-editor-search-query` | Generates Unity Search queries and opens the Search window to find assets or scene objects. |
