@@ -104,8 +104,13 @@ unity vcs providers --json
 Reports binary presence and version, per-host auth state, credential-helper entries, and each
 host's capability tier. It deliberately does **not** report how a repository would get created:
 that depends on whether a token resolves, and resolving one can prompt — a read-only report must
-not ask for a credential. It also does not probe `cm`; that belongs to `unity plugin list`, and
-two diagnostics disagreeing about a path is worse than one.
+not ask for a credential.
+
+The tools table also lists `cm`, the Unity Version Control client, taken from `unity plugin list`'s
+own registry lookup, so the two always agree on its path, version, and state (`resolved`,
+`not-installed`, or `unsupported-platform` on linux-arm64). It never downloads `cm`. Inside a UVCS
+workspace with no `cm` installed, it suggests `unity plugin install uvcs`. The offline VCS section of
+`unity doctor` omits `cm`, which doctor already lists under external components.
 
 ### vcs merge-setup
 
@@ -404,6 +409,7 @@ unity vcs git worktree add feature/lighting
 unity vcs git worktree add feature/lighting --into ../lighting --seed full
 unity vcs git worktree add feature/lighting --install-editor
 unity vcs git worktree add feature/lighting --dry-run
+unity vcs git worktree add feature/lighting --no-register
 unity vcs git worktree remove ../lighting
 unity vcs git worktree remove ../lighting --discard-changes --force
 ```
@@ -412,6 +418,10 @@ unity vcs git worktree remove ../lighting --discard-changes --force
 `PackageCache/`**: it is three quarters of a real `Library`'s bytes, and copying it finishes
 *later* than withholding it, because UPM refills it from its own global store during the import
 either way.
+
+`--no-register` leaves the new worktree out of the Hub project registry, so it does not show up in
+`unity projects list` or in the Hub. Use it for a short-lived checkout you do not want to keep
+track of.
 
 `remove` requires the path, so a bare run can never delete the checkout you are standing in.
 

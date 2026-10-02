@@ -213,17 +213,17 @@ Annotation objects returned by `get`/`list`/`replies` (`--format json`) carry: `
 
 | Command | Args | Key options |
 |---|---|---|
-| `count` | `[target]` (glob `**` at end OK) — **defaults to `unity/projects/<id>/**` only**, see below | `--grouped` (per-target breakdown), `--offset <n>`, `--limit <n>` |
-| `create` | `<target>` | `--text`, `--reply-to <id>`, `--status Active\|Draft`, `--metadata k=v`…, `--target-context k=v`…, `--camera`, `--local-space`, `--time`, `--attachments`, `--unresolve-root-annotation` |
-| `delete` | `<annotationId>` | (confirmation — see Shared behavior) |
-| `delete-fields` | `<annotationId> <field...>` | removes metadata fields; variadic; confirmation |
-| `export` | — | `--target <path>` — **defaults to `assets/projects/<id>/**` only**, see below; `--out <file>` (else stdout), `--resolve-users`; the service returns `assetId` + `assetName` here that `list` does not — the CLI copies the response page verbatim, so treat those as service behavior |
-| `get` | `<annotationId>` | `--fields a,b,c` or `--fields all` (table output only), `--resolve-users` |
-| `list` | — | `--query <json>` (optional — defaults to root threads only), `--next <cursor>`, `--limit 1-100` (default 10), `--all`, `--sort Ascending\|Descending`, `--sort-field annotationId\|latestReply`, `--include-fields a,b`, `--fields a,b` or `--fields all` (table output only), `--full`, `--resolve-users` |
-| `replies` | `<annotationId>` | `--next`, `--limit 1-100`, `--all`, `--sort`, `--status-filter All\|Active\|Sending\|Draft` (repeat flag), `--fields a,b` or `--fields all` (table output only), `--full`, `--resolve-users` |
-| `resolve` / `unresolve` | `<annotationId>` | — (echoes only `annotationId`, see below) |
-| `status` | `<annotationId> <Active\|Sending\|Draft>` | — |
-| `update` | `<annotationId>` | `--text`, `--metadata k=v`…, `--camera`, `--local-space`, `--time` — at least one required |
+| `annotations count` | `[target]` (glob `**` at end OK) — **defaults to `unity/projects/<id>/**` only**, see below | `--grouped` (per-target breakdown), `--offset <n>`, `--limit <n>` |
+| `annotations create` | `<target>` | `--text`, `--reply-to <id>`, `--status Active\|Draft`, `--metadata k=v`…, `--target-context k=v`…, `--camera`, `--local-space`, `--time`, `--attachments`, `--unresolve-root-annotation` |
+| `annotations delete` | `<annotationId>` | (confirmation — see Shared behavior) |
+| `annotations delete-fields` | `<annotationId> <field...>` | removes metadata fields; variadic; confirmation |
+| `annotations export` | — | `--target <path>` — **defaults to `assets/projects/<id>/**` only**, see below; `--out <file>` (else stdout), `--resolve-users`; the service returns `assetId` + `assetName` here that `list` does not — the CLI copies the response page verbatim, so treat those as service behavior |
+| `annotations get` | `<annotationId>` | `--fields a,b,c` or `--fields all` (table output only), `--resolve-users` |
+| `annotations list` | — | `--query <json>` (optional — defaults to root threads only), `--next <cursor>`, `--limit 1-100` (default 10), `--all`, `--sort Ascending\|Descending`, `--sort-field annotationId\|latestReply`, `--include-fields a,b`, `--fields a,b` or `--fields all` (table output only), `--full`, `--resolve-users` |
+| `annotations replies` | `<annotationId>` | `--next`, `--limit 1-100`, `--all`, `--sort`, `--status-filter All\|Active\|Sending\|Draft` (repeat flag), `--fields a,b` or `--fields all` (table output only), `--full`, `--resolve-users` |
+| `annotations resolve` / `annotations unresolve` | `<annotationId>` | — (echoes only `annotationId`, see below) |
+| `annotations status` | `<annotationId> <Active\|Sending\|Draft>` | — |
+| `annotations update` | `<annotationId>` | `--text`, `--metadata k=v`…, `--camera`, `--local-space`, `--time` — at least one required |
 
 ```bash
 # Create a thread on an asset, with typed metadata (count is a number, build stays a string)
@@ -301,16 +301,16 @@ over a camera view), **spatial** (labeled 3D anchor) — payload shapes in
 
 | Command | Args | Key options |
 |---|---|---|
-| `list` | `<annotationId>` | `--resolve-users` |
-| `delete` | `<annotationId> <attachmentId>` | (confirmation — see Shared behavior) |
-| `download` | `<annotationId> <attachmentId>` | `--out <path>` (default: the attachment's original filename in CWD, falling back to `<attachmentId>` when it has no file path), `--force` (overwrite), `--width <px>` (resize image) |
-| `upload` | `<annotationId> <file>` | `--name` (display name), `--content-type` (override inferred MIME) |
-| `add file` | `<annotationId> <file>` | same options and **same handler** as `upload`; only the reported command label, the success message, and the JSON error code (`COLLAB_ATTACHMENTS_ADD_ERROR`) differ — use either |
-| `add sketch` | `<annotationId>` | `--sketch-data <json>` **(required)**, `--camera <json>` **(required)**, `--time <json>`, `--preview <file>`, `--sketch-image <file>` |
-| `add spatial` | `<annotationId>` | `--label` **(required)**, `--position <json>` **(required)**, `--camera <json>` **(required)**, `--time <json>`, `--local <json>` |
-| `update [file]` | `<annotationId> <attachmentId>` | `--content-type`, `--metadata k=v`… — **at least one required**; `file` is the **default variant**: `update <ids…>` without a subcommand means `update file` |
-| `update sketch` | `<annotationId> <attachmentId>` | `--sketch-data`, `--camera`, `--time`, `--metadata k=v`… — each individually optional, but **at least one required** |
-| `update spatial` | `<annotationId> <attachmentId>` | `--label`, `--position`, `--camera`, `--time`, `--local`, `--metadata k=v`… — each individually optional, but **at least one required** |
+| `attachments list` | `<annotationId>` | `--resolve-users` |
+| `attachments delete` | `<annotationId> <attachmentId>` | (confirmation — see Shared behavior) |
+| `attachments download` | `<annotationId> <attachmentId>` | `--out <path>` (default: the attachment's original filename in CWD, falling back to `<attachmentId>` when it has no file path), `--force` (overwrite), `--width <px>` (resize image) |
+| `attachments upload` | `<annotationId> <file>` | `--name` (display name), `--content-type` (override inferred MIME) |
+| `attachments add file` | `<annotationId> <file>` | same options and **same handler** as `upload`; only the reported command label, the success message, and the JSON error code (`COLLAB_ATTACHMENTS_ADD_ERROR`) differ — use either |
+| `attachments add sketch` | `<annotationId>` | `--sketch-data <json>` **(required)**, `--camera <json>` **(required)**, `--time <json>`, `--preview <file>`, `--sketch-image <file>` |
+| `attachments add spatial` | `<annotationId>` | `--label` **(required)**, `--position <json>` **(required)**, `--camera <json>` **(required)**, `--time <json>`, `--local <json>` |
+| `attachments update [file]` | `<annotationId> <attachmentId>` | `--content-type`, `--metadata k=v`… — **at least one required**; `file` is the **default variant**: `update <ids…>` without a subcommand means `update file` |
+| `attachments update sketch` | `<annotationId> <attachmentId>` | `--sketch-data`, `--camera`, `--time`, `--metadata k=v`… — each individually optional, but **at least one required** |
+| `attachments update spatial` | `<annotationId> <attachmentId>` | `--label`, `--position`, `--camera`, `--time`, `--local`, `--metadata k=v`… — each individually optional, but **at least one required** |
 
 ```bash
 # Attach a screenshot (upload and `add file` are interchangeable)
@@ -354,6 +354,14 @@ else inferred from the current project (see [Shared behavior](#shared-behavior))
 ```bash
 unity collaboration reactions add $ANNOTATION_ID 👍 --project-id $PROJ
 unity collaboration read $ANNOTATION_ID --project-id $PROJ   # mark thread read as of now
+
+# Per-thread notification subscription for the current user
+unity collaboration subscribe $ANNOTATION_ID --project-id $PROJ
+unity collaboration unsubscribe $ANNOTATION_ID --project-id $PROJ
+
+# Thread thumbnails
+unity collaboration thumbnail upload $ANNOTATION_ID ./shot.png --project-id $PROJ
+unity collaboration thumbnail download $ANNOTATION_ID --out ./thumb.png
 ```
 
 ---
@@ -398,33 +406,41 @@ usage error.
 
 | Command | Args | Key options |
 |---|---|---|
-| `add` | — | `--organization-id`, `--url`, `--username`, `--key` (API token), `--name` — all required |
-| `delete` | `<serverConfigId>` | `--organization-id` (required); confirmation |
-| `update` | `<serverConfigId>` | `--organization-id` (required) + at least one of `--url`/`--username`/`--key`/`--name` |
-| `test` | — | `--organization-id`, `--url`, `--username`, `--key` — all required; validates credentials **without persisting** |
-| `users` | `<serverConfigId>` | `--organization-id` (required), `--query <text>` — search Jira users |
-| `projects` | `<serverConfigId>` | `--organization-id` (required) — lists **Jira-side** projects on the server |
-| `permissions` | `<serverConfigId>` | `--organization-id`, `--jira-project-id` — both required; checks required Jira permissions |
+| `jira server add` | none | `--organization-id`, `--url`, `--username`, `--name`, and the API token through `--key-from-stdin` (preferred) or `--key`; all required |
+| `jira server delete` | `<serverConfigId>` | `--organization-id` (required); confirmation |
+| `jira server update` | `<serverConfigId>` | `--organization-id` (required) + at least one of `--url`/`--username`/`--key-from-stdin`/`--key`/`--name` |
+| `jira server test` | none | `--organization-id`, `--url`, `--username`, and the API token through `--key-from-stdin` (preferred) or `--key`; all required; validates credentials **without persisting** |
+| `jira server users` | `<serverConfigId>` | `--organization-id` (required), `--query <text>` — search Jira users |
+| `jira server projects` | `<serverConfigId>` | `--organization-id` (required) — lists **Jira-side** projects on the server |
+| `jira server permissions` | `<serverConfigId>` | `--organization-id`, `--jira-project-id` — both required; checks required Jira permissions |
+
+> **Warning: `--key` exposes the API token.** Its value is part of the command line, so other
+> users on the same host can read it in the process list, and CI runners that echo commands write
+> it into their logs. Pipe the token with `--key-from-stdin` instead. It reads all of stdin, drops
+> one trailing newline, and waits up to 30 seconds for stdin to close. It's a usage error
+> (exit 2) when stdin is a terminal, the piped value is empty, or both `--key` and
+> `--key-from-stdin` are given, and no error message includes the token. `--key` still works for
+> compatibility.
 
 #### `jira project` — project configurations
 
 | Command | Args | Key options |
 |---|---|---|
-| `add` | `<serverConfigId>` | `--organization-id`, `--jira-project-id`, `--default-reporter-id` — all required, though `--help` doesn't say so (fallback reporter when an annotation author has no Jira match) |
-| `delete` | `<projectConfigId>` | `--organization-id` (required, not marked in `--help`); confirmation |
-| `link` / `unlink` | `<unityProjectId> <projectConfigId>` | — (Unity project id is positional here, not a flag) |
-| `update` | `<projectConfigId>` | `--organization-id` (required, not marked in `--help`), `--default-reporter-id`, `--linked-unity-project-id <id>` (repeatable — **replaces** the whole linked list), `--clear-linked-unity-projects` (mutually exclusive with the previous flag); at least one change flag required |
+| `jira project add` | `<serverConfigId>` | `--organization-id`, `--jira-project-id`, `--default-reporter-id` — all required, though `--help` doesn't say so (fallback reporter when an annotation author has no Jira match) |
+| `jira project delete` | `<projectConfigId>` | `--organization-id` (required, not marked in `--help`); confirmation |
+| `jira project link` / `jira project unlink` | `<unityProjectId> <projectConfigId>` | — (Unity project id is positional here, not a flag) |
+| `jira project update` | `<projectConfigId>` | `--organization-id` (required, not marked in `--help`), `--default-reporter-id`, `--linked-unity-project-id <id>` (repeatable — **replaces** the whole linked list), `--clear-linked-unity-projects` (mutually exclusive with the previous flag); at least one change flag required |
 
 #### `jira issues`
 
 | Command | Args | Key options |
 |---|---|---|
-| `create` | `<annotationId>` | `--jira-project-config-id`, `--summary`, `--type <issueTypeId>` — required; `--project-id`/`--project-path` optional (inferred); `--description`, `--assignee-user-id`, `--reporter-user-id`, `--parent-issue-id` (sub-task) |
-| `get` | `<jiraIssueId>` | `--jira-project-config-id` required; `--project-id`/`--project-path` optional (inferred) |
-| `link` / `unlink` | `<annotationId> <jiraIssueId>` | `--project-id`/`--project-path` optional (inferred); `link` also takes optional `--jira-project-config-id`. `unlink` does **not** delete the issue in Jira |
-| `list` | — | `--organization-id` **(required, org-scoped — no `--project-id`/`--project-path` here)**, `--profile all\|active\|resolved\|unresolved\|draft\|sending` (repeat flag), `--next <token>`, `--limit 1-100` (default 10), `--all`, `--sort Ascending\|Descending` |
-| `search` | — | `--jira-project-config-id` required; `--project-id`/`--project-path` optional (inferred); `--query <text>` (plain text, **not JQL**), `--include-subtasks` |
-| `types` | — | `--jira-project-config-id` required; `--project-id`/`--project-path` optional (inferred); lists issue type ids for `create --type` |
+| `jira issues create` | `<annotationId>` | `--jira-project-config-id`, `--summary`, `--type <issueTypeId>` — required; `--project-id`/`--project-path` optional (inferred); `--description`, `--assignee-user-id`, `--reporter-user-id`, `--parent-issue-id` (sub-task) |
+| `jira issues get` | `<jiraIssueId>` | `--jira-project-config-id` required; `--project-id`/`--project-path` optional (inferred) |
+| `jira issues link` / `jira issues unlink` | `<annotationId> <jiraIssueId>` | `--project-id`/`--project-path` optional (inferred); `link` also takes optional `--jira-project-config-id`. `unlink` does **not** delete the issue in Jira |
+| `jira issues list` | — | `--organization-id` **(required, org-scoped — no `--project-id`/`--project-path` here)**, `--profile all\|active\|resolved\|unresolved\|draft\|sending` (repeat flag), `--next <token>`, `--limit 1-100` (default 10), `--all`, `--sort Ascending\|Descending` |
+| `jira issues search` | — | `--jira-project-config-id` required; `--project-id`/`--project-path` optional (inferred); `--query <text>` (plain text, **not JQL**), `--include-subtasks` |
+| `jira issues types` | — | `--jira-project-config-id` required; `--project-id`/`--project-path` optional (inferred); lists issue type ids for `create --type` |
 
 #### `jira configs`
 
@@ -432,14 +448,19 @@ usage error.
 configs in the org) or `--project-id` (configs available to that Unity project).
 
 ```bash
-# One-time setup: validate credentials, persist server, add a Jira project, link Unity project
-unity collaboration jira server test --organization-id $ORG \
-  --url https://jira.example.com --username bot@example.com --key $JIRA_TOKEN
-unity collaboration jira server add --organization-id $ORG \
-  --url https://jira.example.com --username bot@example.com --key $JIRA_TOKEN --name "Main Jira"
+# One-time setup: validate credentials, persist server, add a Jira project, link Unity project.
+# The API token is piped on stdin, so it never appears in the process list or CI logs.
+printf '%s' "$JIRA_TOKEN" | unity collaboration jira server test --organization-id "$ORG" \
+  --url https://jira.example.com --username bot@example.com --key-from-stdin
+printf '%s' "$JIRA_TOKEN" | unity collaboration jira server add --organization-id "$ORG" \
+  --url https://jira.example.com --username bot@example.com --name "Main Jira" --key-from-stdin
 unity collaboration jira project add $SERVER_CONFIG_ID --organization-id $ORG \
   --jira-project-id 10042 --default-reporter-id $JIRA_ACCOUNT_ID
 unity collaboration jira project link $PROJ $PROJECT_CONFIG_ID
+
+# Rotate the stored API token
+printf '%s' "$NEW_JIRA_TOKEN" | unity collaboration jira server update $SERVER_CONFIG_ID \
+  --organization-id "$ORG" --key-from-stdin
 
 # File an issue from an annotation (get valid type ids from `issues types` first)
 unity collaboration jira issues create $ANNOTATION_ID --project-id $PROJ \
