@@ -31,6 +31,8 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 | `unity-build-gtk` | Builds node-based Editor tools with Unity Graph Toolkit (GTK) on Unity 6.6+: graphs, nodes, ports and validation, State Machine API tools on 6.7+, and runtime assets via… |
 | `unity-build-live-game` | Builds and operates live games with Unity Services. |
 | `unity-cli` | Controls the Unity Editor and projects from the command line, driving a running Editor to edit scenes and assets or run C#. |
+| `unity-create-2d-physics` | Creates and fixes Unity 2D physics in both systems, 2D Physics Core and the legacy Rigidbody 2D system, for any 2D physics question even if neither is named. |
+| `unity-create-tile-palette-or-rule-tiles` | Create a 2D tile palette from sprites or textures, or make tiles change based on their neighbours. |
 | `unity-generate-editor-search-query` | Generates Unity Search queries and opens the Search window to find assets or scene objects. |
 | `unity-implement-in-app-purchases` | Implements, configures, and debugs Unity In-App Purchases, including subscriptions, receipt validation, and direct-to-customer payments via Stripe or Coda. |
 | `unity-initialize-ai-navigation` | Sets up and configures Unity AI Navigation, including NavMesh surfaces, agents, obstacles, and links. |
@@ -42,15 +44,13 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 | `unity-optimize-web` | Optimizes Unity WebGL and WebGPU builds for smaller downloads and faster load. |
 | `unity-package-management` | Adds, removes, upgrades, and discovers Unity (UPM) packages from outside the Editor. |
 | `unity-physics-3d-collision` | Diagnoses 3D PhysX collision and trigger problems. |
+| `unity-pipeline` | Drives a running Unity Editor or dev Player through the unity-pipeline package — recompile, run tests, run C# scripts, method-reload code at runtime and audit the projec… |
 | `unity-project-auditor-fixes` | Instructions for how to use Project Auditor to find and fix a list of issues. |
 | `unity-setup-multiplayer-services` | Guides real-time online multiplayer with Unity Multiplayer Services. |
 | `unity-setup-vivox-voice-chat` | Adds and configures in-game voice and text chat with Unity Vivox. |
 | `unity-shader-graph-create-custom-node` | Generates custom Shader Graph nodes from HLSL code. |
 | `unity-sprite-editor` | Edits Unity sprite rectangles, borders, pivots, outlines, and slicing by generating C# scripts. |
 | `unity-sprite-segment-3x3grid` | Segments a Sprite texture into a 3x3 grid and outputs a pattern of cells matching the center cell's color. |
-| `unity-tilemap-palette-create` | Creates a Tile Palette asset with a rectangular, hexagonal, or isometric Grid layout. |
-| `unity-tilemap-ruletile-createempty` | Creates an empty RuleTile, HexagonalRuleTile, or IsometricRuleTile asset. |
-| `unity-tilemap-ruletile-createfromsegment` | Creates RuleTiles from existing terrain or edge sprites so tiles auto-tile while painting, and converts sprite-segment-3x3grid output patterns into TilingRules. |
 | `unity-ui` | Routes Unity UI requests to the right framework skill (UI Toolkit, uGUI, or IMGUI) and answers UI comparison questions. |
 | `unity-ui-imgui` | Generates and modifies Unity IMGUI editor code such as EditorWindows, custom Inspectors, PropertyDrawers, and OnGUI scripts. |
 | `unity-ui-ugui` | Understands, edits, and generates Unity uGUI Canvas hierarchies, RectTransforms, Layout Groups, and prefab UI. |

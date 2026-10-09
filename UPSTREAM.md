@@ -6,7 +6,7 @@ upstream and the next sync will pick it up.
 
 - Upstream: `Unity-Technologies/skills`
 - Ref: `main`
-- Commit: `cb1dccb8f5adffcca43a5a26993fdeb8eae59433`
+- Commit: `9d282100540601cfddc4bbd69f36a239d7a6f55c`
 
 The only transformation is the skill name: a skill whose name does not already
 contain `unity` gets a `unity-` prefix, in its folder name, in its `name:`
@@ -24,6 +24,8 @@ every run even when upstream has not moved. Use `git log` for that.
 | `audio-setup-mixers` | `unity-audio-setup-mixers` |
 | `build-gtk` | `unity-build-gtk` |
 | `build-live-game` | `unity-build-live-game` |
+| `create-2d-physics` | `unity-create-2d-physics` |
+| `create-tile-palette-or-rule-tiles` | `unity-create-tile-palette-or-rule-tiles` |
 | `generate-editor-search-query` | `unity-generate-editor-search-query` |
 | `implement-in-app-purchases` | `unity-implement-in-app-purchases` |
 | `initialize-ai-navigation` | `unity-initialize-ai-navigation` |
@@ -42,14 +44,12 @@ every run even when upstream has not moved. Use `git log` for that.
 | `shader-graph-create-custom-node` | `unity-shader-graph-create-custom-node` |
 | `sprite-editor` | `unity-sprite-editor` |
 | `sprite-segment-3x3grid` | `unity-sprite-segment-3x3grid` |
-| `tilemap-palette-create` | `unity-tilemap-palette-create` |
-| `tilemap-ruletile-createempty` | `unity-tilemap-ruletile-createempty` |
-| `tilemap-ruletile-createfromsegment` | `unity-tilemap-ruletile-createfromsegment` |
 | `ui` | `unity-ui` |
 | `ui-imgui` | `unity-ui-imgui` |
 | `ui-ugui` | `unity-ui-ugui` |
 | `ui-uitk` | `unity-ui-uitk` |
 | `unity-cli` | `unity-cli` | *(unchanged)*
 | `unity-package-management` | `unity-package-management` | *(unchanged)*
+| `unity-pipeline` | `unity-pipeline` | *(unchanged)*
 | `urp-postprocessing` | `unity-urp-postprocessing` |
 | `validate-urp-render-graph-renderer-feature` | `unity-validate-urp-render-graph-renderer-feature` |
