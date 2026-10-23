@@ -31,7 +31,7 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 | `unity-build-gtk` | Builds node-based Editor tools with Unity Graph Toolkit (GTK) on Unity 6.6+: graphs, nodes, ports and validation, State Machine API tools on 6.7+, and runtime assets via… |
 | `unity-build-live-game` | Builds and operates live games with Unity Services. |
 | `unity-cli` | Controls the Unity Editor and projects from the command line, driving a running Editor to edit scenes and assets or run C#. |
-| `unity-create-2d-physics` | Creates and fixes Unity 2D physics in both systems, 2D Physics Core and the legacy Rigidbody 2D system, for any 2D physics question even if neither is named. |
+| `unity-create-2d-physics` | Creates and fixes Unity 2D physics in both systems, 2D Physics Core and the legacy Rigidbody 2D system. |
 | `unity-create-tile-palette-or-rule-tiles` | Create a 2D tile palette from sprites or textures, or make tiles change based on their neighbours. |
 | `unity-generate-editor-search-query` | Generates Unity Search queries and opens the Search window to find assets or scene objects. |
 | `unity-implement-in-app-purchases` | Implements, configures, and debugs Unity In-App Purchases, including subscriptions, receipt validation, and direct-to-customer payments via Stripe or Coda. |
@@ -41,8 +41,8 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 | `unity-migrate-birp-to-urp` | Plans, executes, and troubleshoots migration from the Built-in Render Pipeline to URP. |
 | `unity-optimize-audio` | Optimizes audio memory, CPU cost, and playback quality through import settings and mixer configuration. |
 | `unity-optimize-text-mesh-pro` | Optimizes TextMeshPro rendering, memory, and font setup, including font asset stacks, fallback atlases, SDF quality, and worldspace text. |
-| `unity-optimize-web` | Optimizes Unity WebGL and WebGPU builds for smaller downloads and faster load. |
-| `unity-package-management` | Adds, removes, upgrades, and discovers Unity (UPM) packages from outside the Editor. |
+| `unity-optimize-web` | Optimizes Unity WebGL and WebGPU builds for smaller downloads, faster loading, and smoother browser performance. |
+| `unity-package-management` | Adds, removes, upgrades, and discovers Unity (UPM) packages from outside the Editor, with the Pipeline package commands first and a C# script as the fallback. |
 | `unity-physics-3d-collision` | Diagnoses 3D PhysX collision and trigger problems. |
 | `unity-pipeline` | Drives a running Unity Editor or dev Player through the unity-pipeline package — recompile, run tests, run C# scripts, method-reload code at runtime and audit the projec… |
 | `unity-project-auditor-fixes` | Instructions for how to use Project Auditor to find and fix a list of issues. |
