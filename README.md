@@ -29,7 +29,7 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 | `unity-asset-transformer-toolkit` | Imports 3D models and point clouds with Asset Transformer Toolkit (formerly Pixyz), and creates, edits, and runs RuleSets, Actions, and LODs. |
 | `unity-audio-setup-mixers` | Routes Audio Sources into existing Audio Mixer Groups, classifying each source by what it plays. |
 | `unity-build-gtk` | Builds node-based Editor tools with Unity Graph Toolkit (GTK) on Unity 6.6+: graphs, nodes, ports and validation, State Machine API tools on 6.7+, and runtime assets via… |
-| `unity-build-live-game` | Builds and operates live games with Unity Services. |
+| `unity-build-live-game` | Builds and operates a live game's backend with Unity Gaming Services. |
 | `unity-cli` | Controls the Unity Editor and projects from the command line, driving a running Editor to edit scenes and assets or run C#. |
 | `unity-create-2d-physics` | Creates and fixes Unity 2D physics in both systems, 2D Physics Core and the legacy Rigidbody 2D system. |
 | `unity-create-tile-palette-or-rule-tiles` | Create a 2D tile palette from sprites or textures, or make tiles change based on their neighbours. |
@@ -44,7 +44,7 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 | `unity-optimize-web` | Optimizes Unity WebGL and WebGPU builds for smaller downloads, faster loading, and smoother browser performance. |
 | `unity-package-management` | Adds, removes, upgrades, and discovers Unity (UPM) packages from outside the Editor, with the Pipeline package commands first and a C# script as the fallback. |
 | `unity-physics-3d-collision` | Diagnoses 3D PhysX collision and trigger problems. |
-| `unity-pipeline` | Drives a running Unity Editor or dev Player through the unity-pipeline package — recompile, run tests, run C# scripts, method-reload code at runtime and audit the projec… |
+| `unity-pipeline` | Drives a Unity Editor or dev Player via the unity-pipeline package. |
 | `unity-project-auditor-fixes` | Instructions for how to use Project Auditor to find and fix a list of issues. |
 | `unity-setup-multiplayer-services` | Guides real-time online multiplayer with Unity Multiplayer Services. |
 | `unity-setup-vivox-voice-chat` | Adds and configures in-game voice and text chat with Unity Vivox. |
