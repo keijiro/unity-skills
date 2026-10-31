@@ -45,7 +45,7 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 | `unity-optimize-web` | Optimizes Unity WebGL and WebGPU builds for smaller downloads, faster loading, and smoother browser performance. |
 | `unity-package-management` | Adds, removes, upgrades, and discovers Unity (UPM) packages from outside the Editor, with the Pipeline package commands first and a C# script as the fallback. |
 | `unity-physics-3d-collision` | Diagnoses 3D PhysX collision and trigger problems. |
-| `unity-pipeline` | Drives a Unity Editor or dev Player via the unity-pipeline package. |
+| `unity-pipeline` | Control a Unity Editor or Player via the unity-pipeline package. |
 | `unity-project-auditor-fixes` | Instructions for how to use Project Auditor to find and fix a list of issues. |
 | `unity-setup-multiplayer-services` | Guides real-time online multiplayer with Unity Multiplayer Services. |
 | `unity-setup-vivox-voice-chat` | Adds and configures in-game voice and text chat with Unity Vivox. |
