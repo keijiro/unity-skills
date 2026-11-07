@@ -6,7 +6,7 @@ upstream and the next sync will pick it up.
 
 - Upstream: `Unity-Technologies/skills`
 - Ref: `main`
-- Commit: `ba28c24fc7e569fa0fd5b6bf16ab2bb0acef0594`
+- Commit: `60f95e6d4beaeacf4dfdff7829ec9b35008a0be0`
 
 The only transformation is the skill name: a skill whose name does not already
 contain `unity` gets a `unity-` prefix, in its folder name, in its `name:`
@@ -27,18 +27,19 @@ every run even when upstream has not moved. Use `git log` for that.
 | `craft-game-floors` | `unity-craft-game-floors` |
 | `create-2d-physics` | `unity-create-2d-physics` |
 | `create-tile-palette-or-rule-tiles` | `unity-create-tile-palette-or-rule-tiles` |
+| `fix-3d-physics-collisions` | `unity-fix-3d-physics-collisions` |
 | `generate-editor-search-query` | `unity-generate-editor-search-query` |
 | `implement-in-app-purchases` | `unity-implement-in-app-purchases` |
 | `initialize-ai-navigation` | `unity-initialize-ai-navigation` |
 | `levelplay-unity-integration` | `levelplay-unity-integration` | *(unchanged)*
-| `localization` | `unity-localization` |
+| `localize-unity-project` | `localize-unity-project` | *(unchanged)*
+| `manage-cloud-build` | `unity-manage-cloud-build` |
 | `manage-sprite-atlas` | `unity-manage-sprite-atlas` |
 | `migrate-birp-to-urp` | `unity-migrate-birp-to-urp` |
 | `new-unity-project` | `new-unity-project` | *(unchanged)*
 | `optimize-audio` | `unity-optimize-audio` |
 | `optimize-text-mesh-pro` | `unity-optimize-text-mesh-pro` |
 | `optimize-web` | `unity-optimize-web` |
-| `physics-3d-collision` | `unity-physics-3d-collision` |
 | `project-auditor-fixes` | `unity-project-auditor-fixes` |
 | `setup-multiplayer-services` | `unity-setup-multiplayer-services` |
 | `setup-vivox-voice-chat` | `unity-setup-vivox-voice-chat` |

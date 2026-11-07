@@ -24,27 +24,28 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 | Skill | Description |
 |---|---|
 | `levelplay-unity-integration` | Integrates the LevelPlay ad mediation SDK via the Ads Mediation package. |
-| `new-unity-project` | Guides creating a new Unity project, gathering concept, platforms, and monetization before setting up the project, source control, and packages. |
+| `localize-unity-project` | Sets up Unity Localization, including locales, String and Asset Tables, and CJK fonts. |
+| `new-unity-project` | Guides creating a new Unity project, from concept, platforms, and monetization to source control and packages. |
 | `unity-2d-pixel-perfect` | Sets up, diagnoses, and fixes pixel perfect 2D rendering with PixelPerfectCamera in URP or Built-in. |
 | `unity-asset-transformer-toolkit` | In the Unity Editor, imports 3D models and point clouds with Asset Transformer Toolkit (formerly Pixyz), and creates, edits, and runs RuleSets, Actions, and LODs. |
 | `unity-audio-setup-mixers` | Routes Audio Sources into existing Audio Mixer Groups, classifying each source by what it plays. |
-| `unity-build-gtk` | Builds node-based Editor tools with Unity Graph Toolkit (GTK) on Unity 6.6+: graphs, nodes, ports and validation, State Machine API tools on 6.7+, and runtime assets via… |
+| `unity-build-gtk` | Builds graph tools with Unity Graph Toolkit (GTK) on 6.6+, state machines on 6.7+, and importers for runtime assets. |
 | `unity-build-live-game` | Builds and operates a live game's backend with Unity Gaming Services. |
-| `unity-cli` | Controls the Unity Editor and projects from the command line, driving a running Editor to edit scenes and assets or run C#. |
+| `unity-cli` | Controls Unity Editors and projects from the command line, including a running Editor. |
 | `unity-craft-game-floors` | Makes a Unity game look and feel finished: art style, lighting, juice, sound, menus, saves and look scoring. |
 | `unity-create-2d-physics` | Creates and fixes Unity 2D physics in both systems, 2D Physics Core and the legacy Rigidbody 2D system. |
-| `unity-create-tile-palette-or-rule-tiles` | Create a 2D tile palette from sprites or textures, or make tiles change based on their neighbours. |
+| `unity-create-tile-palette-or-rule-tiles` | Creates a 2D tile palette from sprites or textures, or makes tiles change based on their neighbours. |
+| `unity-fix-3d-physics-collisions` | Diagnoses and fixes 3D PhysX collision, trigger, and raycast problems. |
 | `unity-generate-editor-search-query` | Generates Unity Search queries and opens the Search window to find assets or scene objects. |
 | `unity-implement-in-app-purchases` | Implements, configures, and debugs Unity In-App Purchases, including subscriptions, receipt validation, and direct-to-customer payments via Stripe or Coda. |
 | `unity-initialize-ai-navigation` | Sets up and configures Unity AI Navigation, including NavMesh surfaces, agents, obstacles, and links. |
-| `unity-localization` | Sets up and configures Unity Localization, including locales, String and Asset Tables, and CJK fonts. |
+| `unity-manage-cloud-build` | Sets up Unity Build Automation build targets and diagnoses failed cloud builds. |
 | `unity-manage-sprite-atlas` | Manages SpriteAtlas assets through a prebuild pipeline, covering master and variant atlases, packing settings, and platform overrides. |
 | `unity-migrate-birp-to-urp` | Plans, executes, and troubleshoots migration from the Built-in Render Pipeline to URP. |
 | `unity-optimize-audio` | Optimizes audio memory, CPU cost, and playback quality through import settings and mixer configuration. |
 | `unity-optimize-text-mesh-pro` | Optimizes TextMeshPro rendering, memory, and font setup, including font asset stacks, fallback atlases, SDF quality, and worldspace text. |
 | `unity-optimize-web` | Optimizes Unity WebGL and WebGPU builds for smaller downloads, faster loading, and smoother browser performance. |
-| `unity-package-management` | Adds, removes, upgrades, and discovers Unity (UPM) packages from outside the Editor, with the Pipeline package commands first and a C# script as the fallback. |
-| `unity-physics-3d-collision` | Diagnoses 3D PhysX collision and trigger problems. |
+| `unity-package-management` | Adds, removes, upgrades, and finds Unity (UPM) packages from outside the Editor. |
 | `unity-pipeline` | Control a Unity Editor or Player via the unity-pipeline package. |
 | `unity-project-auditor-fixes` | Instructions for how to use Project Auditor to find and fix a list of issues. |
 | `unity-setup-multiplayer-services` | Guides real-time online multiplayer with Unity Multiplayer Services. |
