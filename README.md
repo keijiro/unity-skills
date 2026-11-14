@@ -35,6 +35,7 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 | `unity-craft-game-floors` | Makes a Unity game look and feel finished: art style, lighting, juice, sound, menus, saves and look scoring. |
 | `unity-create-2d-physics` | Creates and fixes Unity 2D physics in both systems, 2D Physics Core and the legacy Rigidbody 2D system. |
 | `unity-create-tile-palette-or-rule-tiles` | Creates a 2D tile palette from sprites or textures, or makes tiles change based on their neighbours. |
+| `unity-create-xr` | Sets up a Unity project for XR. Use when user asks for XR, OpenXR, Quest graphics or XR rig. |
 | `unity-fix-3d-physics-collisions` | Diagnoses and fixes 3D PhysX collision, trigger, and raycast problems. |
 | `unity-generate-editor-search-query` | Generates Unity Search queries and opens the Search window to find assets or scene objects. |
 | `unity-implement-in-app-purchases` | Implements, configures, and debugs Unity In-App Purchases, including subscriptions, receipt validation, and direct-to-customer payments via Stripe or Coda. |
