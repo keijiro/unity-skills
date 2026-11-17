@@ -30,9 +30,10 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 | `unity-asset-transformer-toolkit` | In the Unity Editor, imports 3D models and point clouds with Asset Transformer Toolkit (formerly Pixyz), and creates, edits, and runs RuleSets, Actions, and LODs. |
 | `unity-audio-setup-mixers` | Routes Audio Sources into existing Audio Mixer Groups, classifying each source by what it plays. |
 | `unity-build-gtk` | Builds graph tools with Unity Graph Toolkit (GTK) on 6.6+, state machines on 6.7+, and importers for runtime assets. |
-| `unity-build-live-game` | Builds and operates a live game's backend with Unity Gaming Services. |
+| `unity-build-live-game` | Builds and operates a live game backend on Unity Gaming Services. |
+| `unity-build-multiplayer-game` | Builds Unity online multiplayer, from matchmaking to gameplay sync. |
 | `unity-cli` | Controls Unity Editors and projects from the command line, including a running Editor. |
-| `unity-craft-game-floors` | Makes a Unity game look and feel finished: art style, lighting, juice, sound, menus, saves and look scoring. |
+| `unity-craft-game-floors` | Makes a Unity game playable and finished: core loop, art style, lighting, juice, sound, menus, saves, look scoring. |
 | `unity-create-2d-physics` | Creates and fixes Unity 2D physics in both systems, 2D Physics Core and the legacy Rigidbody 2D system. |
 | `unity-create-tile-palette-or-rule-tiles` | Creates a 2D tile palette from sprites or textures, or makes tiles change based on their neighbours. |
 | `unity-create-xr` | Sets up a Unity project for XR. Use when user asks for XR, OpenXR, Quest graphics or XR rig. |
@@ -49,7 +50,6 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 | `unity-package-management` | Adds, removes, upgrades, and finds Unity (UPM) packages from outside the Editor. |
 | `unity-pipeline` | Control a Unity Editor or Player via the unity-pipeline package. |
 | `unity-project-auditor-fixes` | Instructions for how to use Project Auditor to find and fix a list of issues. |
-| `unity-setup-multiplayer-services` | Guides real-time online multiplayer with Unity Multiplayer Services. |
 | `unity-setup-vivox-voice-chat` | Adds and configures in-game voice and text chat with Unity Vivox. |
 | `unity-shader-graph-create-custom-node` | Generates custom Shader Graph nodes from HLSL code. |
 | `unity-sprite-editor` | Edits Unity sprite rectangles, borders, pivots, outlines, and slicing by generating C# scripts. |

@@ -1,13 +1,13 @@
 # Play-mode verification loop
 
-Part of the **`unity-cli`** skill. See that skill's `SKILL.md` for CLI install, global flags,
+Relative links in this file resolve to the skill directory's `references/` folder.
+
+Part of the **`unity-cli`** skill. See the main skill page for CLI install, global flags,
 environment variables, exit codes, and the general "drive a running Editor" workflow. All global
 flags (`--format json`, `--non-interactive`, `--yes`, `--proxy`, ...) apply to every command below.
 [integration-advanced.md](integration-advanced.md) covers the Pipeline command surface generally;
 this page is the recipe for one specific loop: enter Play mode, confirm the game is actually
 running (not frozen), look at it, read its console, and tune it, all without leaving the CLI.
-
-Relative links in this file resolve to the skill directory's `references/` folder, so `../SKILL.md` is the skill's main page.
 
 ## Contents
 
@@ -216,6 +216,15 @@ unity command console get -- --tail 50 --level error
 `--level error` returns errors and exceptions only. Prefer `console status` (no arguments) when you
 only need the compile-failure flag and entry counts, not the entries themselves, to poll cheaply
 while something else runs.
+
+**Never run `console clear` to get a clean slate.** It empties the user's own **Console** window
+too, including errors they asked you to fix. A failed Editor command also logs an Error there, so
+red entries you caused are expected. To read only what your own steps logged, note the cursor that
+`console status` returns before you start, then read from it:
+
+```bash
+unity command console get -- --since <cursor> --level error
+```
 
 Older `com.unity.pipeline` documentation names this command `get_console_logs`, and before command
 groups it was `console` (with `console_status` and `clear_console` alongside it); the currently

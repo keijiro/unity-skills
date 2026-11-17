@@ -6,7 +6,7 @@ upstream and the next sync will pick it up.
 
 - Upstream: `Unity-Technologies/skills`
 - Ref: `main`
-- Commit: `e5956e7e34a125982550de15a9e87f8e66af7d86`
+- Commit: `5841a34846f3e2b908c37aca1fca2eb15118a440`
 
 The only transformation is the skill name: a skill whose name does not already
 contain `unity` gets a `unity-` prefix, in its folder name, in its `name:`
@@ -24,6 +24,7 @@ every run even when upstream has not moved. Use `git log` for that.
 | `audio-setup-mixers` | `unity-audio-setup-mixers` |
 | `build-gtk` | `unity-build-gtk` |
 | `build-live-game` | `unity-build-live-game` |
+| `build-multiplayer-game` | `unity-build-multiplayer-game` |
 | `craft-game-floors` | `unity-craft-game-floors` |
 | `create-2d-physics` | `unity-create-2d-physics` |
 | `create-tile-palette-or-rule-tiles` | `unity-create-tile-palette-or-rule-tiles` |
@@ -42,7 +43,6 @@ every run even when upstream has not moved. Use `git log` for that.
 | `optimize-text-mesh-pro` | `unity-optimize-text-mesh-pro` |
 | `optimize-web` | `unity-optimize-web` |
 | `project-auditor-fixes` | `unity-project-auditor-fixes` |
-| `setup-multiplayer-services` | `unity-setup-multiplayer-services` |
 | `setup-vivox-voice-chat` | `unity-setup-vivox-voice-chat` |
 | `shader-graph-create-custom-node` | `unity-shader-graph-create-custom-node` |
 | `sprite-editor` | `unity-sprite-editor` |

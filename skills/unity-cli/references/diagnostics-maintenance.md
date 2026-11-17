@@ -1,10 +1,10 @@
 # Diagnostics & maintenance — unity-cli command reference
 
-Part of the **`unity-cli`** skill. See that skill's `SKILL.md` for CLI install, global flags,
+Relative links in this file resolve to the skill directory's `references/` folder.
+
+Part of the **`unity-cli`** skill. See the main skill page for CLI install, global flags,
 environment variables, exit codes, and common workflows. All global flags (`--format json`,
 `--non-interactive`, `--yes`, `--proxy`, …) apply to every command below.
-
-Relative links in this file resolve to the skill directory's `references/` folder, so `../SKILL.md` is the skill's main page.
 
 ### Contents
 
@@ -133,6 +133,8 @@ unity ci init --dry-run
 unity ci init --project-path ./MyProject --overwrite
 ```
 
+Piped or redirected with no `--format`, `--dry-run` prints tsv: a `line` header, then one row per line of the workflow. To save the bare YAML to a file, pass `--format human` (`unity ci init --dry-run --format human > workflow.yml`).
+
 The generated workflow installs the CLI, restores the editor download cache and the project's `Library/` folder, installs the editor version from `ProjectSettings/ProjectVersion.txt`, activates a license, runs `unity doctor --ci` as a preflight, runs the tests with a JUnit report, builds, uploads the report and the build, and returns the license seat in a teardown step that runs even when the job failed or was cancelled.
 
 What it derives from the project: the editor version (rejected unless it parses as a real Unity version, since it is interpolated into an install command on the runner), and the editor module the build target needs where that is unambiguous — `Android`, `iOS`, `tvOS`, `WebGL`, `WindowsStoreApps`, `VisionOS`, `Lumin`. The standalone desktop targets get no module, because each has il2cpp / mono / server variants and picking one from the target alone would be a guess; asking for `StandaloneOSX` or `StandaloneWindows64` warns that the install step needs a `--module` you choose.
@@ -199,7 +201,7 @@ unity doctor --ci --skip-license
 
 Every check carries a machine-readable `code` (`LICENSE_NONE`, `EDITOR_NOT_INSTALLED`, `DISK_SPACE_LOW`, `NETWORK_UNREACHABLE`, …) plus a remediation `hint`. In `--format json` the per-check results stay in `data` even on failure, with one coded entry per failure in `errors`. Output is redacted and carries no tokens and no absolute user paths, so it is safe to paste into a public CI log.
 
-`--ci` is always explicit — it is never inferred from `CI=true`, because a report that silently changed shape and exit code on a runner would be a trap. Note that the CLI already defaults to `--format tsv` whenever stdout is redirected, which in CI it usually is; that output leads with a `verdict` row.
+`--ci` is always explicit — it is never inferred from `CI=true`, because a report that silently changed shape and exit code on a runner would be a trap. Note that the CLI already defaults to `--format tsv` whenever stdout is redirected, which in CI it usually is; that output is a `key<TAB>value` header, then one row per `--format json` field under its key path: `verdict`, then `checks.0.id`, `checks.0.status`, `checks.0.code`, `checks.0.message` and so on. A script that read `verdict<TAB>...` or `check.<id>` rows reads those keys now; `--no-header` drops the header row.
 
 ---
 
@@ -273,7 +275,7 @@ unity version --format json
 unity --format json --version
 ```
 
-`unity version` reports the CLI version, release channel (`stable`, `beta`, …), commit, platform, architecture, and runtime — the same version fact `env` and `doctor` carry, as one parseable object. It honors `--format` (`human`, `json`, `tsv`, `ndjson`); human output is the bare version string.
+`unity version` reports the CLI version, release channel (`stable`, `beta`, …), commit, platform, architecture, and runtime — the same version fact `env` and `doctor` carry, as one parseable object. It honors `--format` (`human`, `json`, `tsv`, `ndjson`); human output is the bare version string, and `tsv` is a `key<TAB>value` table with one row per field.
 
 A bare `unity --version` still prints only the version string, so scripts that parse it are unaffected. The `--version` flag switches to the structured object only when an explicit machine format is given *before* it (`unity --json --version`, `unity --format json --version`, or `UNITY_FORMAT=json unity --version`) — the flag terminates parsing, so a trailing format after `--version` is not seen. For order-independent machine output, prefer the `unity version` subcommand.
 
@@ -306,13 +308,13 @@ unity cache key --target Android
 unity cache key ./MyProject
 ```
 
-Whenever stdout is not an interactive terminal — a pipe, a redirect, or any CI runner — the key is the only thing written to it, so it drops straight into a shell substitution or a workflow expression. (On an interactive colour terminal the CLI's usual one-line banner still prints above it, as it does for every command; `--quiet` suppresses that.)
+Whenever stdout is not an interactive terminal — a pipe, a redirect, or any CI runner — the format defaults to `tsv`, a `key<TAB>value` table of the same members `--json` carries (the `key` row holds the hash). To get the bare key for a shell substitution or a workflow expression, pass `--format human`: it prints the key and nothing else. (On an interactive colour terminal the CLI's usual one-line banner still prints above it, as it does for every command; `--quiet` suppresses that.)
 
 Pass the project path if the workflow's working directory isn't the project:
 
 ```yaml
 - id: cachekey
-  run: echo "key=$(unity cache key MyProject --target Android)" >> "$GITHUB_OUTPUT"
+  run: echo "key=$(unity cache key MyProject --target Android --format human)" >> "$GITHUB_OUTPUT"
 - uses: actions/cache@v4
   with:
     path: MyProject/Library
@@ -366,9 +368,10 @@ Separately again, every run (CI, an agent, a machine `--format` included) sends 
 
 - explicitly turning analytics off (`unity analytics opt-out`, an opt-out answered at an older CLI's prompt, or turning it off in the Hub while signed in to the Hub; a Hub opt-out made while signed out is not visible to the CLI and does not stop it);
 - `DO_NOT_TRACK` set to any value but empty, `0` or `false` ([consoledonottrack.com](https://consoledonottrack.com));
+- `UGS_CLI_TELEMETRY_DISABLED` set to any value but empty, `0` or `false`, the same switch under the UGS CLI's name;
 - `UNITY_NO_CLI_INVOKED_TELEMETRY` set to any value.
 
-`DO_NOT_TRACK` also stops the upload of opt-in usage data, even when you opted in. Usage data never holds a command for long: on a slow or unreachable network the CLI gives up on it after half a second. `unity analytics status` says what is collected, links the privacy policy, and reports whether the ping is on and why it is off. None of these settings stop the licensing records `unity license activate` files.
+`DO_NOT_TRACK` or `UGS_CLI_TELEMETRY_DISABLED` also stops the upload of opt-in usage data, even when you opted in. Usage data never holds a command for long: on a slow or unreachable network the CLI gives up on it after half a second. `unity analytics status` says what is collected, links the privacy policy, and reports whether the ping is on and why it is off. None of these settings stop the licensing records `unity license activate` files.
 
 ---
 
@@ -600,6 +603,10 @@ unity completion fish
 unity completion powershell
 ```
 
+After `unity command` (and its aliases `cmd` and `request`), Tab offers the connected Editor's commands, then a group's commands, then the chosen command's parameters not yet typed. The shell asks the CLI at Tab time, for the Editor of the project in the working directory or `UNITY_PROJECT_PATH`, and waits at most 1 second. With no Editor, or a slow one, Tab offers nothing there. Nothing is cached. Scripts generated before this need regenerating to get it.
+
+With `--json` or `--format ndjson`, the script comes inside the standard envelope: `data.shell` names the shell and `data.script` holds the script text. Every other format prints the script itself.
+
 ---
 
 ### Bug — report a bug
@@ -626,7 +633,7 @@ Prompts for title, description, email, reproducibility level, and which area the
 
 The report can also be supplied entirely through flags — `--title`, `--description`, `--steps` (repeatable, one line per value), `--reproducibility <first-time|sometimes|always>`, and `--email` (defaults to your Unity account email when signed in; otherwise required). On a terminal, any flags you pass skip their prompts and the remaining fields still ask; a non-interactive run submits without prompting. A non-interactive run with missing or invalid fields fails fast with a usage error (exit 2) listing the exact flags to add.
 
-Use `--area <cli|pipeline-package|editor|licensing|ugs|plastic|ai|transform|not-sure>` to say which part of Unity the issue is in: the CLI itself, the connection to the Editor or the Pipeline package (`com.unity.pipeline`), the Editor or your project, licensing and signing in, or one of the plugins (`ugs`, `plastic`, `ai`, `transform`). Pass it whenever you know, because a failure that surfaces in CLI output is otherwise easy to misroute as a CLI bug when the Editor or the Pipeline package is at fault. It's optional and never blocks a report: pass `not-sure` when you don't know, or leave it out. On a terminal without `--area`, the reporter asks, with "Not sure" preselected; a non-interactive run without it submits with no area, the same report it sent before the flag existed. An unknown value is a usage error (exit 2). The answer is sent with the report as an `Issue area:` line in the report text, which is what triage sees. On a terminal, a plugin is offered as an area only while it is installed. A plugin area names the plugin and its installed version, and attaches the newest `.log` and `.txt` files from the log directories the plugin registry lists for it, redacted and size-capped like the other logs. Every report also lists the plugins installed on the machine, with their versions, as an `Installed plugins:` line.
+Use `--area <cli|pipeline-package|editor|licensing|ugs|plastic|ai|transform|assetlibrary|not-sure>` to say which part of Unity the issue is in: the CLI itself, the connection to the Editor or the Pipeline package (`com.unity.pipeline`), the Editor or your project, licensing and signing in, or one of the plugins (`ugs`, `plastic`, `ai`, `transform`, `assetlibrary`). Pass it whenever you know, because a failure that surfaces in CLI output is otherwise easy to misroute as a CLI bug when the Editor or the Pipeline package is at fault. It's optional and never blocks a report: pass `not-sure` when you don't know, or leave it out. On a terminal without `--area`, the reporter asks, with "Not sure" preselected; a non-interactive run without it submits with no area, the same report it sent before the flag existed. An unknown value is a usage error (exit 2). The answer is sent with the report as an `Issue area:` line in the report text, which is what triage sees. On a terminal, a plugin is offered as an area only while it is installed. A plugin area names the plugin and its installed version, and attaches the newest `.log` and `.txt` files from the log directories the plugin registry lists for it, redacted and size-capped like the other logs. Every report also lists the plugins installed on the machine, with their versions, as an `Installed plugins:` line.
 
 Use `--attachments <paths...>` (repeatable) to attach extra files — for example a crash log or a zipped copy of a subset of assets. Each path must be an existing, readable file; a folder is rejected (zip it yourself first), and a missing or unreadable path fails fast with a usage error (exit 2) naming the offending path.
 

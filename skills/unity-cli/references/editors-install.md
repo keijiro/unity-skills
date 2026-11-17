@@ -1,6 +1,6 @@
 # Editors, install & modules — unity-cli command reference
 
-Part of the **`unity-cli`** skill. See that skill's `SKILL.md` for CLI install, global flags,
+Part of the **`unity-cli`** skill. See the main skill page for CLI install, global flags,
 environment variables, exit codes, and common workflows. All global flags (`--format json`,
 `--non-interactive`, `--yes`, `--proxy`, …) apply to every command below.
 
@@ -94,7 +94,7 @@ unity editors path 6000.0.47f1
 unity editors path 6000.0.47f1 --architecture arm64 --json
 ```
 
-Honors `--architecture` and `--format` / `--json`, and reports ambiguous matches so you can narrow by version or architecture.
+Honors `--architecture` and `--format` / `--json`, and reports ambiguous matches so you can narrow by version or architecture. `--format ndjson` prints the same `data` as `--json`, as one result line.
 
 #### editors install-path
 
@@ -172,7 +172,7 @@ unity editors prune --remove-missing
 unity editors prune --remove-missing --yes
 ```
 
-Unlike `--remove`, this never touches the filesystem — the folder is already gone, so there is nothing to delete, and confirming only updates the registry. It doesn't require the running-editor check to succeed, since nothing can be running out of a folder that no longer exists. The two flags are independent and neither implies the other; `--format json`/`ndjson` carry the missing-path rows under `data.missing`.
+Unlike `--remove`, this never touches the filesystem — the folder is already gone, so there is nothing to delete, and confirming only updates the registry. It doesn't require the running-editor check to succeed, since nothing can be running out of a folder that no longer exists. The two flags are independent and neither implies the other; `--format json`/`ndjson` carry the missing-path rows under `data.missing`. Under `--format tsv` (the default when piped) a run that finds missing editors prints its json `data` as one `key<TAB>value` record: a `key value` header, then one row per json key path, such as `editors.0.version` or `missing.0.path`. A removal that was never attempted prints no `removed` row. A run with nothing missing prints the plain `editors` table.
 
 #### editors verify
 
@@ -226,6 +226,9 @@ unity editor add /path/to/Unity/Editor
 
 # Skip fetching module metadata (faster, but modules won't be listed until refreshed)
 unity editor add /path/to/Unity/Editor --no-fetch-modules
+
+# Register an unsigned development build (for example a locally built trunk Editor)
+unity editor add /path/to/Unity/Editor --skip-signature-check
 ```
 
 ---
@@ -363,20 +366,6 @@ unity install 6000.0.47f1 --download-only --operating-system windows -m il2cpp -
 ```
 
 Each payload is checked against its published size and checksum before the run reports success, and a payload that fails is removed. Only the modules you name with `-m` are fetched, and the license gate is unchanged: a non-interactive run needs `--accept-eula`. The envelope's items end as `downloaded` (listed in `data.completedUids`) and `data.path` is the download folder; the human summary says where the files are and that nothing was installed. `-d/--download-directory` still means a portable install and cannot be combined with it, nor can `--resume`, `--set-default` or `--list-modules` (exit 2). `--changeset` with another OS's `--operating-system` is still refused.
-
-#### Headless Linux Editor (`--headless`)
-
-On Linux, a release can also ship a headless Editor that runs with no display, for CI and servers. `unity install` never picks it on its own:
-
-- `--headless` installs the headless Editor. A release without one, or a macOS or Windows target, fails with `INSTALL_HEADLESS_UNAVAILABLE`. The bundled catalog doesn't list the headless Editor, so the same error appears when the CLI falls back to it offline.
-- Without it, the version picker (`unity install` with no version, on a terminal) asks which one, with the regular Editor selected. Any other run installs the regular Editor, even on a machine with no display.
-
-The headless Editor leaves out the modules it can't use, such as iOS and visionOS. A release without a headless Editor installs the regular one unless `--headless` was given.
-
-```bash
-# A CI image: the headless Editor and Android support
-unity install 6000.7.0f1 --headless -m android --accept-eula
-```
 
 #### Linux arm64: experimental x86_64 Editor under FEX-Emu
 
