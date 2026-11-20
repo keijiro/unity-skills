@@ -26,21 +26,22 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 | `levelplay-unity-integration` | Integrates the LevelPlay ad mediation SDK via the Ads Mediation package. |
 | `localize-unity-project` | Sets up Unity Localization, including locales, String and Asset Tables, and CJK fonts. |
 | `new-unity-project` | Guides creating a new Unity project, from concept, platforms, and monetization to source control and packages. |
-| `unity-2d-pixel-perfect` | Sets up, diagnoses, and fixes pixel perfect 2D rendering with PixelPerfectCamera in URP or Built-in. |
-| `unity-asset-transformer-toolkit` | In the Unity Editor, imports 3D models and point clouds with Asset Transformer Toolkit (formerly Pixyz), and creates, edits, and runs RuleSets, Actions, and LODs. |
-| `unity-audio-setup-mixers` | Routes Audio Sources into existing Audio Mixer Groups, classifying each source by what it plays. |
 | `unity-build-gtk` | Builds graph tools with Unity Graph Toolkit (GTK) on 6.6+, state machines on 6.7+, and importers for runtime assets. |
 | `unity-build-live-game` | Builds and operates a live game backend on Unity Gaming Services. |
 | `unity-build-multiplayer-game` | Builds Unity online multiplayer, from matchmaking to gameplay sync. |
 | `unity-cli` | Controls Unity Editors and projects from the command line, including a running Editor. |
+| `unity-configure-2d-pixel-perfect` | Sets up, diagnoses, and fixes pixel perfect 2D rendering with PixelPerfectCamera in URP or Built-in. |
 | `unity-craft-game-floors` | Makes a Unity game playable and finished: core loop, art style, lighting, juice, sound, menus, saves, look scoring. |
 | `unity-create-2d-physics` | Creates and fixes Unity 2D physics in both systems, 2D Physics Core and the legacy Rigidbody 2D system. |
 | `unity-create-tile-palette-or-rule-tiles` | Creates a 2D tile palette from sprites or textures, or makes tiles change based on their neighbours. |
+| `unity-create-ui` | Creates, edits, and explains Unity game and editor UI in UI Toolkit, uGUI, or IMGUI, matching the framework the project already uses. |
 | `unity-create-xr` | Sets up a Unity project for XR. Use when user asks for XR, OpenXR, Quest graphics or XR rig. |
 | `unity-fix-3d-physics-collisions` | Diagnoses and fixes 3D PhysX collision, trigger, and raycast problems. |
 | `unity-generate-editor-search-query` | Generates Unity Search queries and opens the Search window to find assets or scene objects. |
 | `unity-implement-in-app-purchases` | Implements, configures, and debugs Unity In-App Purchases, including subscriptions, receipt validation, and direct-to-customer payments via Stripe or Coda. |
+| `unity-import-and-optimize-cad-models` | Imports and optimizes CAD models and point clouds with Asset Transformer Toolkit (Pixyz). |
 | `unity-initialize-ai-navigation` | Sets up and configures Unity AI Navigation, including NavMesh surfaces, agents, obstacles, and links. |
+| `unity-instrument-game-telemetry` | Adds telemetry events to a Unity game with the Insights Events package, covering retention, level difficulty and economy balance. |
 | `unity-manage-cloud-build` | Sets up Unity Build Automation build targets and diagnoses failed cloud builds. |
 | `unity-manage-sprite-atlas` | Manages SpriteAtlas assets through a prebuild pipeline, covering master and variant atlases, packing settings, and platform overrides. |
 | `unity-migrate-birp-to-urp` | Plans, executes, and troubleshoots migration from the Built-in Render Pipeline to URP. |
@@ -48,16 +49,13 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 | `unity-optimize-text-mesh-pro` | Optimizes TextMeshPro rendering, memory, and font setup, including font asset stacks, fallback atlases, SDF quality, and worldspace text. |
 | `unity-optimize-web` | Optimizes Unity WebGL and WebGPU builds for smaller downloads, faster loading, and smoother browser performance. |
 | `unity-package-management` | Adds, removes, upgrades, and finds Unity (UPM) packages from outside the Editor. |
-| `unity-pipeline` | Control a Unity Editor or Player via the unity-pipeline package. |
-| `unity-project-auditor-fixes` | Instructions for how to use Project Auditor to find and fix a list of issues. |
+| `unity-pipeline` | Controls a Unity Editor or dev Player through the com.unity.pipeline package to compile, run tests, evaluate C#, method-reload code, enter Play Mode and capture screensh… |
+| `unity-project-auditor-fixes` | Runs a Project Auditor scan on a Unity project and fixes the reported issues in small, reviewable batches. |
+| `unity-route-audio-to-mixer-groups` | Routes Audio Sources into existing Audio Mixer Groups, classifying each source by what it plays. |
 | `unity-setup-vivox-voice-chat` | Adds and configures in-game voice and text chat with Unity Vivox. |
-| `unity-shader-graph-create-custom-node` | Generates custom Shader Graph nodes from HLSL code. |
-| `unity-sprite-editor` | Edits Unity sprite rectangles, borders, pivots, outlines, and slicing by generating C# scripts. |
+| `unity-shader-graph-create-custom-node` | Generates custom Shader Graph nodes from HLSL code by reflection. |
+| `unity-sprite-editor` | Edits sprite rectangles, names, borders, pivots, outlines, and slicing in a texture's import data by generating C# Editor scripts. |
 | `unity-sprite-segment-3x3grid` | Segments a Sprite texture into a 3x3 grid and outputs a pattern of cells matching the center cell's color. |
-| `unity-ui` | Routes Unity UI requests to the right framework skill (UI Toolkit, uGUI, or IMGUI) and answers UI comparison questions. |
-| `unity-ui-imgui` | Generates and modifies Unity IMGUI editor code such as EditorWindows, custom Inspectors, PropertyDrawers, and OnGUI scripts. |
-| `unity-ui-ugui` | Understands, edits, and generates Unity uGUI Canvas hierarchies, RectTransforms, Layout Groups, and prefab UI. |
-| `unity-ui-uitk` | Understands, edits, and generates Unity UI Toolkit UXML and USS with flex layouts. |
 | `unity-urp-postprocessing` | Sets up, configures, and debugs URP post-processing with the Volume framework. |
 | `unity-validate-urp-render-graph-renderer-feature` | Reviews a Unity 6 URP ScriptableRendererFeature that uses the Render Graph API, checking resource wiring, material binding, execution structure, and best practices. |
 <!-- END SKILLS -->

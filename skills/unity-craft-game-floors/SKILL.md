@@ -92,10 +92,10 @@ applying 3D instructions. The scorecard's 2D anchor set still applies.
 
 This skill owns **opinionated creation and floors** — which values, in what order, to what bar.
 Catalog neighbours own **mechanics on existing setups**: volume/post mechanics →
-`unity-urp-postprocessing` · routing sources into existing mixer groups → `unity-audio-setup-mixers` · audio
-import/memory → `unity-optimize-audio` · UI framework choice and construction → `unity-ui` · font assets →
+`unity-urp-postprocessing` · routing sources into existing mixer groups → `unity-route-audio-to-mixer-groups` · audio
+import/memory → `unity-optimize-audio` · UI framework choice and construction → `unity-create-ui` · font assets →
 `unity-optimize-text-mesh-pro` · backend services → `unity-build-live-game` · pixel-perfect 2D →
-`unity-2d-pixel-perfect`. When an ask is purely mechanical, route there; when it's "make it good," it's
+`unity-configure-2d-pixel-perfect`. When an ask is purely mechanical, route there; when it's "make it good," it's
 this skill, which then delegates the mechanics. If this index wants to grow, the new thing is a
 catalog skill routed by the prompt, not another floor — a floor must apply to *every* game.
 

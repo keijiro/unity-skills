@@ -16,7 +16,7 @@ mode, defaults, ordering, background installs, handoffs.
 - **`unity-cli`** — install, auth/license, Editor install, creation, source control, open. Its
   "Bootstrap a new project from scratch" workflow is the backbone here.
 - **`unity-package-management`** — packages with the Pipeline `package` commands (C# script fallback).
-- **`unity-urp-postprocessing`**, **`unity-ui`**, **`unity-2d-pixel-perfect`** — visual-baseline mechanics (Step 7).
+- **`unity-urp-postprocessing`**, **`ui`**, **`2d-pixel-perfect`** — visual-baseline mechanics (Step 7).
 - **`unity-craft-game-floors`** — the craft floors (look, feel, audio, shell, live floor, the done gate),
   loaded at Step 6 and carried through the build.
 - **`unity-implement-in-app-purchases`**, **`levelplay-unity-integration`**, **`unity-build-live-game`** —
@@ -98,7 +98,7 @@ Step 3 reconciles the result against it.
 
 ## Before Step 1: check the delegated skills are loaded
 
-Look for `unity-cli`, `unity-package-management`, `unity-urp-postprocessing`, `unity-ui`, `unity-build-live-game`
+Look for `unity-cli`, `unity-package-management`, `unity-urp-postprocessing`, `ui`, `unity-build-live-game`
 and `unity-craft-game-floors` in your client's skills. If any is missing, say which and what it does, and offer the install routes
 in [references/skill-setup.md](references/skill-setup.md), in the same question as sign-in and
 license — never install without a yes. A decline gets the fallback at its step, gap named in the

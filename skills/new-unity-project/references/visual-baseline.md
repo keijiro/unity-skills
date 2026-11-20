@@ -62,7 +62,7 @@ asked for Built-in.
    desktop, the lowest for mobile/WebGL. Leave color space Linear and the Input System as the
    template set them.
 4. **UI stack.** HUD and menus use a uGUI Canvas + TextMeshPro or UI Toolkit — **never `OnGUI`**.
-   **REQUIRED SUB-SKILL:** `unity-ui` picks between them for the project. If it isn't loaded, choose
+   **REQUIRED SUB-SKILL:** `ui` picks between them for the project. If it isn't loaded, choose
    between them from the brief and say which you chose, and why, in your final report.
 5. **Materials and shaders.** Under URP use `Universal Render Pipeline/Lit`, `…/Unlit`,
    `…/2D/Sprite-Lit-Default` or `…/2D/Sprite-Unlit-Default`. `Standard` and `Unlit/Color` render
@@ -71,7 +71,7 @@ asked for Built-in.
    `currentRenderPipeline`, not `defaultRenderPipeline`: a quality tier can carry its own pipeline
    asset, and item 3 above just set the tier.
 6. **Pixel art only.** Point filter mode on sprites and a Pixel Perfect Camera — see
-   `unity-2d-pixel-perfect`. If missing, do both yourself and note the skill-setup install route in the
+   `2d-pixel-perfect`. If missing, do both yourself and note the skill-setup install route in the
    report.
 
 Save the scene, then confirm both of these — **not with `unity logs`**, which reads the CLI's own

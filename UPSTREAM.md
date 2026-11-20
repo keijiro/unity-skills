@@ -6,7 +6,7 @@ upstream and the next sync will pick it up.
 
 - Upstream: `Unity-Technologies/skills`
 - Ref: `main`
-- Commit: `5841a34846f3e2b908c37aca1fca2eb15118a440`
+- Commit: `dbd7ac43f3ef1dc0ff0d3d7d008034781ac02022`
 
 The only transformation is the skill name: a skill whose name does not already
 contain `unity` gets a `unity-` prefix, in its folder name, in its `name:`
@@ -19,20 +19,21 @@ every run even when upstream has not moved. Use `git log` for that.
 
 | Upstream | This repository |
 |---|---|
-| `2d-pixel-perfect` | `unity-2d-pixel-perfect` |
-| `asset-transformer-toolkit` | `unity-asset-transformer-toolkit` |
-| `audio-setup-mixers` | `unity-audio-setup-mixers` |
 | `build-gtk` | `unity-build-gtk` |
 | `build-live-game` | `unity-build-live-game` |
 | `build-multiplayer-game` | `unity-build-multiplayer-game` |
+| `configure-2d-pixel-perfect` | `unity-configure-2d-pixel-perfect` |
 | `craft-game-floors` | `unity-craft-game-floors` |
 | `create-2d-physics` | `unity-create-2d-physics` |
 | `create-tile-palette-or-rule-tiles` | `unity-create-tile-palette-or-rule-tiles` |
+| `create-ui` | `unity-create-ui` |
 | `create-xr` | `unity-create-xr` |
 | `fix-3d-physics-collisions` | `unity-fix-3d-physics-collisions` |
 | `generate-editor-search-query` | `unity-generate-editor-search-query` |
 | `implement-in-app-purchases` | `unity-implement-in-app-purchases` |
+| `import-and-optimize-cad-models` | `unity-import-and-optimize-cad-models` |
 | `initialize-ai-navigation` | `unity-initialize-ai-navigation` |
+| `instrument-game-telemetry` | `unity-instrument-game-telemetry` |
 | `levelplay-unity-integration` | `levelplay-unity-integration` | *(unchanged)*
 | `localize-unity-project` | `localize-unity-project` | *(unchanged)*
 | `manage-cloud-build` | `unity-manage-cloud-build` |
@@ -43,14 +44,11 @@ every run even when upstream has not moved. Use `git log` for that.
 | `optimize-text-mesh-pro` | `unity-optimize-text-mesh-pro` |
 | `optimize-web` | `unity-optimize-web` |
 | `project-auditor-fixes` | `unity-project-auditor-fixes` |
+| `route-audio-to-mixer-groups` | `unity-route-audio-to-mixer-groups` |
 | `setup-vivox-voice-chat` | `unity-setup-vivox-voice-chat` |
 | `shader-graph-create-custom-node` | `unity-shader-graph-create-custom-node` |
 | `sprite-editor` | `unity-sprite-editor` |
 | `sprite-segment-3x3grid` | `unity-sprite-segment-3x3grid` |
-| `ui` | `unity-ui` |
-| `ui-imgui` | `unity-ui-imgui` |
-| `ui-ugui` | `unity-ui-ugui` |
-| `ui-uitk` | `unity-ui-uitk` |
 | `unity-cli` | `unity-cli` | *(unchanged)*
 | `unity-package-management` | `unity-package-management` | *(unchanged)*
 | `unity-pipeline` | `unity-pipeline` | *(unchanged)*
