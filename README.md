@@ -23,7 +23,7 @@ Works with Claude Code, GitHub Copilot, Cursor, Cline and
 <!-- BEGIN SKILLS -->
 | Skill | Description |
 |---|---|
-| `levelplay-unity-integration` | Integrates the LevelPlay ad mediation SDK via the Ads Mediation package. |
+| `levelplay-unity-integration` | Integrates the LevelPlay ad mediation SDK (Ads Mediation package). |
 | `localize-unity-project` | Sets up Unity Localization, including locales, String and Asset Tables, and CJK fonts. |
 | `new-unity-project` | Guides creating a new Unity project, from concept, platforms, and monetization to source control and packages. |
 | `unity-build-gtk` | Builds graph tools with Unity Graph Toolkit (GTK) on 6.6+, state machines on 6.7+, and importers for runtime assets. |
