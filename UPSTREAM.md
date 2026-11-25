@@ -6,7 +6,7 @@ upstream and the next sync will pick it up.
 
 - Upstream: `Unity-Technologies/skills`
 - Ref: `main`
-- Commit: `8974588c0d76745c7eb9bee530b4053451bfc1aa`
+- Commit: `3e285ba9f31edd296d1da992d5d7cf1aa2f3ab7b`
 
 The only transformation is the skill name: a skill whose name does not already
 contain `unity` gets a `unity-` prefix, in its folder name, in its `name:`
